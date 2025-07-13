@@ -12,8 +12,15 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />   <!-- Font Awesome library for social and icon fonts -->
 
-  <style>     /* Base layout setup */
-    
+  <!-- Saudi Font (local file in same directory as index.html) -->
+  <style>
+    @font-face {
+      font-family: 'Saudi';
+      src: url('SaudiWeb-Regular.woff2') format('woff2'); /* Load from local root */
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * { box-sizing: border-box; }
 
     body {
@@ -29,7 +36,7 @@
     }
 
     /* Header section for language toggle button */
-    #main-header {  /* Added fixed header */
+    #main-header {
       position: fixed;
       top: 0;
       width: 100%;
@@ -37,7 +44,7 @@
       display: flex;
       justify-content: flex-end;
       background: transparent;
-      z-index: 10;  /* Ensures it stays above everything */
+      z-index: 10;
     }
 
     /* Language toggle button styling */
@@ -65,7 +72,6 @@
       z-index: 1;
     }
 
-    /* Headings and tagline styles */
     .content h1 {
       font-size: 3rem;
       color: #80deea;
@@ -88,7 +94,6 @@
       margin-bottom: 30px;
     }
 
-    /* Social icon links */
     .social-links {
       margin: 20px 0;
     }
@@ -106,18 +111,6 @@
       color: #fff;
     }
 
-    .hackerrank-icon {
-      width: 32px;
-      height: 32px;
-      vertical-align: middle;
-      transition: transform 0.3s;
-    }
-
-    .hackerrank-icon:hover {
-      transform: scale(1.2);
-    }
-
-    /* Boxes for education, certifications, skills */
     .info-boxes {
       display: flex;
       flex-wrap: wrap;
@@ -156,29 +149,15 @@
     .lang-ar {
       display: none;
       direction: rtl;
+      font-family: 'Saudi', sans-serif; /* Apply Saudi font */
     }
 
-    /* Saudi font applied to Arabic section only */
-    @font-face {
-      font-family: 'Saudi';
-      src: url('/mnt/data/saudi_font/Saudi for download page/Saudi/Web fonts/WOFF-2-TT/Saudi Web/SaudiWeb-Regular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    .lang-ar {
-      font-family: 'Saudi', sans-serif;
-    }
-
-    /* Responsive layout adjustments */
     @media (max-width: 768px) {
       .content h1 { font-size: 2rem; }
       .content h2 { font-size: 1.5rem; }
       .content p { font-size: 1rem; }
       .box { width: 90%; }
       .info-boxes { flex-direction: column; align-items: center; }
-      footer { width: 90% !important; margin: 50px auto 0; padding: 20px 10px; }
-      .social-links a { font-size: 1.5rem; margin: 10px; }
     }
   </style>
 
@@ -186,10 +165,7 @@
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
 
-<!-- Replaced Vanta.js with particles.js background -->
 <body style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;">
-
-  <!-- particles background container -->
   <div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:0;"></div>
 
   <!-- Header section with language toggle button -->
@@ -198,150 +174,59 @@
   </header>
 
   <div class="overlay">
-
     <!-- English content block -->
     <div class="content lang-en">
-      <div style="margin-top:400px"></div>
       <h1>Basma Alsaif</h1>
-      <div style="margin:160px 0"></div>
       <h2>Cybersecurity Student</h2>
       <p>Future Bug Bounty Hunter</p>
       <p class="tagline">From lines of code to lines of defense</p>
-
       <div class="social-links">
-        <a href="https://github.com/basmalsaif" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/basmalsaif" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.upwork.com/freelancers/~0174c5943c03285323?mp_source=share" target="_blank" aria-label="Upwork"><i class="fab fa-upwork"></i></a>
-        <a href="https://www.hackerrank.com/profile/basmahalsaif" target="_blank" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
-      </div>
-
-      <!-- English info cards -->
-      <div class="info-boxes">
-        <div class="box">
-          <h3>Education</h3>
-          <ul>
-            <li>Coming Soon...</li>
-            <li>Bachelor Degree in Information Technology</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>Certifications</h3>
-          <ul>
-            <li><a href="..." target="_blank" style="color:#8ed6ff;text-decoration:none;">Linux+</a></li>
-            <li style="margin-top: 15px;">Coming Soon...</li>
-            <li>CCNP</li>
-            <li>Security+</li>
-            <li>eJPT</li>
-            <li>CySA+</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>Skills & Tools</h3>
-          <ul>
-            <li>Web Development</li>
-            <li>RedHat Linux</li>
-            <li>Java</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>PHP</li>
-          </ul>
-        </div>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
 
     <!-- Arabic content block -->
     <div class="content lang-ar">
-      <div style="margin-top:400px"></div>
       <h1>بسمه السيف</h1>
-      <div style="margin:160px 0"></div>
       <h2>طالبة أمن سيبراني</h2>
       <p>صائدة ثغرات تحت الإنشاء</p>
       <p class="tagline">من خوارزميات البرمجة إلى معارك التحدي</p>
-
       <div class="social-links">
-        <a href="https://github.com/basmalsaif" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/basmalsaif" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.upwork.com/freelancers/~0174c5943c03285323?mp_source=share" target="_blank" aria-label="Upwork"><i class="fab fa-upwork"></i></a>
-        <a href="https://www.hackerrank.com/profile/basmahalsaif" target="_blank" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
-      </div>
-
-      <!-- Arabic info cards -->
-      <div class="info-boxes">
-        <div class="box">
-          <h3>التعليم</h3>
-          <ul>
-            <li>قريباً...</li>
-            <li>بكالوريوس تقنية المعلومات</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>الشهادات</h3>
-          <ul>
-            <li><a href="..." target="_blank" style="color:#8ed6ff;text-decoration:none;">+Linux</a></li>
-            <li style="margin-top: 15px;">قريباً...</li>
-            <li>CCNP</li>
-            <li>+Security</li>
-            <li>eJPT</li>
-            <li>CySA</li>
-          </ul>
-        </div>
-        <div class="box">
-          <h3>المهارات</h3>
-          <ul>
-            <li>تطوير المواقع</li>
-            <li>لينكس ريدهات</li>
-            <li>JAVA</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>PHP</li>
-          </ul>
-        </div>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </div>
 
-  <!-- Footer with contact info and copyright -->
-  <footer style="flex-shrink:0;width:90%;max-width:600px;margin:100px auto 0;text-align:center;padding:30px 20px;background:rgba(0,0,0,0.4);color:#ccc;border-radius:10px;">
-    <h3 class="footer-title">Get in Touch</h3>
-    <a href="mailto:basmalsaif@outlook.com" target="_blank" aria-label="Email" style="margin:10px;color:#8ed6ff;"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/basmalsaif" target="_blank" aria-label="LinkedIn" style="margin:10px;color:#8ed6ff;"><i class="fab fa-linkedin"></i></a>
-    <p id="footer-text" style="text-align:center;margin-top:20px;font-size:.9rem;color:#aaa">&copy; 2025 All rights reserved to Basma Alsaif</p>
-  </footer>
-
-  <!-- Initialize particles.js background and language toggle -->
   <script>
-    particlesJS('particles-js',
-    {
-      "particles": {
-        "number": { "value": 80 },
-        "color": { "value": "#8ed6ff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5 },
-        "size": { "value": 3 },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#8ed6ff",
-          "opacity": 0.4,
-          "width": 1
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#8ed6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#8ed6ff",
+          opacity: 0.4,
+          width: 1
         },
-        "move": { "enable": true, "speed": 2 }
+        move: { enable: true, speed: 2 }
       },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": true, "mode": "repulse" }
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" }
         }
       },
-      "retina_detect": true
+      retina_detect: true
     });
 
     const btn = document.getElementById('toggle-lang');
     const en = document.querySelector('.lang-en');
     const ar = document.querySelector('.lang-ar');
-    const footerTitle = document.querySelector('.footer-title');
-    const footerText = document.getElementById('footer-text');
     const pageTitle = document.getElementById('page-title');
     let current = 'en';
 
@@ -351,8 +236,6 @@
         ar.style.display = 'block';
         document.body.dir = 'rtl';
         btn.textContent = 'English';
-        footerTitle.textContent = 'تواصل معي';
-        footerText.innerHTML = '&copy; 2025 جميع الحقوق محفوظة لبسمه السيف';
         pageTitle.textContent = 'بسمه السيف';
         current = 'ar';
       } else {
@@ -360,8 +243,6 @@
         en.style.display = 'block';
         document.body.dir = 'ltr';
         btn.textContent = 'عربي';
-        footerTitle.textContent = 'Get in Touch';
-        footerText.innerHTML = '&copy; 2025 All rights reserved to Basma Alsaif';
         pageTitle.textContent = 'Basma Alsaif';
         current = 'en';
       }
