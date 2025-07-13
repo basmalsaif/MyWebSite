@@ -13,20 +13,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />   <!-- Font Awesome library for social and icon fonts -->
 
   <style>     /* Base layout setup */
-    
+
+    /* Saudi font declaration */
+    @font-face {
+      font-family: 'Saudi';
+      src: url('SaudiWeb-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * { box-sizing: border-box; }
 
     body {
       background-color: #000;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Saudi', sans-serif;  /* Saudi font applied to full site */
       min-height: 100vh;
       color: #fff;
       overflow-x: hidden;
       width: 100%;
       direction: ltr;
       position: relative;
-      font-size: 18px; /* Increased font size globally */
+      font-size: 18px;
     }
 
     /* Header section for language toggle button */
@@ -125,7 +133,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 80px; /* reduced from 140px */
+      margin-top: 80px;
     }
 
     .box {
@@ -160,18 +168,6 @@
     .lang-ar {
       display: none;
       direction: rtl;
-    }
-
-    /* Saudi font applied to Arabic section only */
-    @font-face {
-      font-family: 'Saudi';
-      src: url('SaudiWeb-Regular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-
-    .lang-ar {
-      font-family: 'Saudi', sans-serif;
     }
 
     /* Responsive layout adjustments */
