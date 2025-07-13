@@ -19,13 +19,14 @@
     body {
       background-color: #000;
       margin: 0;
-      font-family: 'Saudi', 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       min-height: 100vh;
       color: #fff;
       overflow-x: hidden;
       width: 100%;
       direction: ltr;
       position: relative;
+      font-size: 18px; /* Increased font size globally */
     }
 
     /* Header section for language toggle button */
@@ -42,13 +43,14 @@
 
     /* Language toggle button styling */
     #toggle-lang {
-      padding: 10px 20px;
+      padding: 12px 24px;
       border: none;
       border-radius: 5px;
       background: #8ed6ff;
       color: #000;
       font-weight: bold;
       cursor: pointer;
+      font-size: 1rem;
     }
 
     /* Main content wrapper */
@@ -56,7 +58,7 @@
       background: rgba(0, 0, 0, 0.4);
       width: 100%;
       min-height: 100vh;
-      padding: 40px 20px;
+      padding: 60px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -67,18 +69,18 @@
 
     /* Headings and tagline styles */
     .content h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #80deea;
       margin-bottom: 10px;
     }
 
     .content h2 {
-      font-size: 2rem;
-      margin: 30px 0;
+      font-size: 2.2rem;
+      margin: 40px 0 20px;
     }
 
     .content p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       color: #e0f7fa;
     }
 
@@ -90,12 +92,12 @@
 
     /* Social icon links */
     .social-links {
-      margin: 20px 0;
+      margin: 30px 0;
     }
 
     .social-links a {
-      margin: 0 15px;
-      font-size: 2rem;
+      margin: 0 20px;
+      font-size: 2.2rem;
       color: #b3e5fc;
       text-decoration: none;
       transition: transform 0.3s, color 0.3s;
@@ -107,8 +109,8 @@
     }
 
     .hackerrank-icon {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       vertical-align: middle;
       transition: transform 0.3s;
     }
@@ -123,24 +125,26 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      margin-top: 140px;
+      margin-top: 80px; /* reduced from 140px */
     }
 
     .box {
       background: rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding: 20px;
-      width: 300px;
+      padding: 25px;
+      width: 320px;
       color: #fff;
       backdrop-filter: blur(5px);
+      font-size: 1.1rem;
     }
 
     .box h3 {
       color: #80deea;
       border-bottom: 1px solid #80deea;
-      padding-bottom: 5px;
-      margin-bottom: 10px;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
     }
 
     .box ul {
@@ -149,7 +153,7 @@
     }
 
     .box ul li {
-      margin: 8px 0;
+      margin: 10px 0;
     }
 
     /* Arabic content hidden by default */
@@ -172,13 +176,13 @@
 
     /* Responsive layout adjustments */
     @media (max-width: 768px) {
-      .content h1 { font-size: 2rem; }
-      .content h2 { font-size: 1.5rem; }
-      .content p { font-size: 1rem; }
+      .content h1 { font-size: 2.5rem; }
+      .content h2 { font-size: 1.7rem; }
+      .content p { font-size: 1.1rem; }
       .box { width: 90%; }
       .info-boxes { flex-direction: column; align-items: center; }
       footer { width: 90% !important; margin: 50px auto 0; padding: 20px 10px; }
-      .social-links a { font-size: 1.5rem; margin: 10px; }
+      .social-links a { font-size: 1.7rem; margin: 10px; }
     }
   </style>
 
@@ -194,16 +198,14 @@
 
   <!-- Header section with language toggle button -->
   <header id="main-header">
-    <button id="toggle-lang" aria-label="Toggle language">عربي</button>
+    <button id="toggle-lang" aria-label="Toggle language" role="switch" aria-pressed="false">عربي</button>
   </header>
 
   <div class="overlay">
 
     <!-- English content block -->
-    <div class="content lang-en">
-      <div style="margin-top:400px"></div>
+    <div class="content lang-en" lang="en">
       <h1>Basma Alsaif</h1>
-      <div style="margin:160px 0"></div>
       <h2>Cybersecurity Student</h2>
       <p>Future Bug Bounty Hunter</p>
       <p class="tagline">From lines of code to lines of defense</p>
@@ -251,10 +253,8 @@
     </div>
 
     <!-- Arabic content block -->
-    <div class="content lang-ar">
-      <div style="margin-top:400px"></div>
+    <div class="content lang-ar" lang="ar">
       <h1>بسمه السيف</h1>
-      <div style="margin:160px 0"></div>
       <h2>طالبة أمن سيبراني</h2>
       <p>صائدة ثغرات تحت الإنشاء</p>
       <p class="tagline">من خوارزميات البرمجة إلى معارك التحدي</p>
@@ -307,13 +307,12 @@
     <h3 class="footer-title">Get in Touch</h3>
     <a href="mailto:basmalsaif@outlook.com" target="_blank" aria-label="Email" style="margin:10px;color:#8ed6ff;"><i class="fas fa-envelope"></i></a>
     <a href="https://www.linkedin.com/in/basmalsaif" target="_blank" aria-label="LinkedIn" style="margin:10px;color:#8ed6ff;"><i class="fab fa-linkedin"></i></a>
-    <p id="footer-text" style="text-align:center;margin-top:20px;font-size:.9rem;color:#aaa">&copy; 2025 All rights reserved to Basma Alsaif</p>
+    <p id="footer-text" style="text-align:center;margin-top:20px;font-size:1rem;color:#aaa">&copy; 2025 All rights reserved to Basma Alsaif</p>
   </footer>
 
   <!-- Initialize particles.js background and language toggle -->
   <script>
-    particlesJS('particles-js',
-    {
+    particlesJS('particles-js', {
       "particles": {
         "number": { "value": 80 },
         "color": { "value": "#8ed6ff" },
@@ -351,6 +350,7 @@
         ar.style.display = 'block';
         document.body.dir = 'rtl';
         btn.textContent = 'English';
+        btn.setAttribute('aria-pressed', 'true');
         footerTitle.textContent = 'تواصل معي';
         footerText.innerHTML = '&copy; 2025 جميع الحقوق محفوظة لبسمه السيف';
         pageTitle.textContent = 'بسمه السيف';
@@ -360,6 +360,7 @@
         en.style.display = 'block';
         document.body.dir = 'ltr';
         btn.textContent = 'عربي';
+        btn.setAttribute('aria-pressed', 'false');
         footerTitle.textContent = 'Get in Touch';
         footerText.innerHTML = '&copy; 2025 All rights reserved to Basma Alsaif';
         pageTitle.textContent = 'Basma Alsaif';
